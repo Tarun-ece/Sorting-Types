@@ -49,7 +49,7 @@ void quickSort(int *arr,int low,int high){
 }
 
 int main(){
-    int ar[] = {8,9,1,6,3,2,4};
+    int ar[] = {10, 7, 8, 9, 1, 5 };
     int n = sizeof(ar)/sizeof(ar[0]);
     quickSort(ar,0,n);
     printArray(ar,n);
