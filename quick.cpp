@@ -1,31 +1,23 @@
-#include <iostream>
-using namespace std;
+#include <bits/stdc++.h>
 
-void printArray(int *arr,int n){
+using namespace std;
+void printsort(int *arr, int n){
     for(int i=0;i<n;i++){
-        cout<<arr[i]<<"\n";
+        cout<<arr[i]<<" ";
     }
 }
-
-void quickSort(int *arr,int low,int high){
-
-    int s=low;   //start
-    int e=high;  //end
+void quicksort(int *arr, int low, int high){
+    int s=low;
+    int e=high;
     int mid=(s+e)/2;
     int pivot=arr[mid];
-
-
     while(s<=e){
-       // printArray(arr,5);
-        while (arr[s]<pivot)
-        {
+        while(arr[s]<pivot){
             s++;
         }
-        while (arr[e]>pivot)
-        {
+        while(arr[e]>pivot){
             e--;
         }
-
         if(s<=e){
             int temp=arr[s];
             arr[s]=arr[e];
@@ -33,25 +25,20 @@ void quickSort(int *arr,int low,int high){
             s++;
             e--;
         }
-
-
     }
-
     if(e>low){
-        quickSort(arr,low,e);
+        quicksort(arr,low,e);
     }
     if(s<high){
-        quickSort(arr,s,high);
+        quicksort(arr,s,high);
     }
-
-
-
+    
 }
-
-int main(){
-    int ar[] = {10, 7, 8, 9, 1, 5 };
-    int n = sizeof(ar)/sizeof(ar[0]);
-    quickSort(ar,0,n);
-    printArray(ar,n);
+int main()
+{
+    int arr[]={10, 7, 8, 9, 1, 5 };
+    int n=sizeof(arr)/sizeof(arr[0]);
+    quicksort(arr,0,n);
+    printsort(arr,n);
     return 0;
 }
