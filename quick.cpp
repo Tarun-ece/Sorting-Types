@@ -36,7 +36,7 @@ void quicksort(int *arr, int low, int high){
 }
 int main()
 {
-    int arr[]={10, 7, 8, 9, 1, 5 };
+    int arr[]={10, 7, 8, 9, 1, 5 }; // must require 6 inputs.
     int n=sizeof(arr)/sizeof(arr[0]);
     quicksort(arr,0,n);
     printsort(arr,n);
